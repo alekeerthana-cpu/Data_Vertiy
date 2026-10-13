@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVerity — Intelligent Data Quality, Profiling & Remediation Platform</title>
+    <meta name="description" content="Enterprise data quality management platform. Automated dataset verification, schema profiling, statistical anomaly detection, and 1-click remediation.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dark-theme">
+
+    <!-- SITE NAVIGATION BAR -->
+    <header class="app-header" id="appHeader">
+        <div class="header-container">
+            <!-- Brand Logo -->
+            <a href="#hero" class="brand-link">
+                <div class="brand-group">
+                    <div class="brand-icon-wrapper">
+                        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="url(#brandGrad)" />
+                            <path d="M9 16L14 21L23 11" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="23" cy="21" r="3" fill="#38bdf8"/>
+                            <defs>
+                                <linearGradient id="brandGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#6366f1"/>
+                                    <stop offset="1" stop-color="#06b6d4"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <div class="brand-title-row">
+                            <span class="brand-name">DataVerity</span>
+                            <span class="version-tag">PRO</span>
+                        </div>
+                        <span class="brand-subtitle">Data Quality & Profiling Platform</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Website Navigation Links -->
+            <nav class="site-nav" id="siteNav">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#analyzer" class="nav-link nav-highlight">Live Studio</a>
+                <a href="#calculator" class="nav-link">ROI Calculator</a>
+                <a href="#standards" class="nav-link">Standards</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </nav>
+
+            <!-- Actions & Server Status -->
+            <div class="header-actions">
+                <div class="server-status-pill" id="serverStatusPill" title="API Status">
+                    <span class="status-dot pulse" id="statusDot"></span>
+                    <span class="status-text" id="statusText">Checking API...</span>
+                    <button class="ping-btn" id="checkServer" title="Ping Server">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <a href="#analyzer" class="btn btn-primary btn-sm" id="navLaunchBtn">
+                    <span>Open Analyzer</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7"/>
+                        <polyline points="7 7 17 7 17 17"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Toast Notification Container -->
+        <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+        <!-- ================================================================= -->
+        <!-- 1. HERO SECTION -->
+        <!-- ================================================================= -->
+        <section class="hero-section" id="hero">
+            <div class="hero-glow-backdrop"></div>
+            <div class="hero-container">
+                <div class="hero-badge-row">
+                    <span class="badge-pill">
+                        <span class="badge-pulse-dot"></span>
+                        Next-Gen Data Reliability Engineering
+                    </span>
+                    <span class="badge-sub-pill">ISO/IEC 25012 Model</span>
+                </div>
+
+                <h1 class="website-hero-title">
+                    Trust Your Data Before It Powers <br>
+                    <span class="text-gradient">Your AI, BI & Analytics</span>
+                </h1>
+
+                <p class="website-hero-subtitle">
+                    Automate dataset verification, detect statistical anomalies, profile schemas, and execute 
+                    instant 1-click remediation. Eliminate dirty records, missing values, and corrupted data pipelines.
+                </p>
+
+                <!-- Hero CTA Buttons -->
+                <div class="hero-cta-group">
+                    <a href="#analyzer" class="btn btn-primary btn-lg pulse-glow" id="heroStartBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                        <span>Launch Live Analyzer Studio</span>
+                    </a>
+                    <button class="btn btn-outline btn-lg" id="heroDemoBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                        <span>Test Dirty CRM Sample</span>
+                    </button>
+                </div>
+
+                <!-- Trust Metrics Bar -->
+                <div class="trust-metrics-strip">
+                    <div class="trust-stat">
+                        <strong>100%</strong>
+                        <span>Client & Local Privacy</span>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-stat">
+                        <strong>&lt; 50ms</strong>
+                        <span>Analysis Latency</span>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-stat">
+                        <strong>15+ Rules</strong>
+                        <span>Quality & IQR Tests</span>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-stat">
+                        <strong>CSV & XLSX</strong>
+                        <span>Native File Ingestion</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 2. INTERACTIVE LIVE ANALYZER STUDIO (THE CORE TOOL) -->
+        <!-- ================================================================= -->
+        <section class="studio-section" id="analyzer">
+            <div class="section-header-centered">
+                <span class="badge-pill">Interactive Workspace</span>
+                <h2 class="section-title">Live Data Quality Studio</h2>
+                <p class="section-subtitle">
+                    Upload your own dataset or load a pre-configured sample to run real-time quality scoring, 
+                    deep schema profiling, and automated remediation.
+                </p>
+            </div>
+
+            <div class="studio-container">
+                <!-- Dropzone / Ingestion Card -->
+                <div class="upload-section" id="uploadSection">
+                    <div class="dropzone-card" id="dropZone">
+                        <div class="dropzone-border-glow"></div>
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon-box">
+                                <svg class="cloud-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+                                    <polyline points="12 12 12 16 12 12"/>
+                                    <polyline points="9 13 12 10 15 13"/>
+                                </svg>
+                            </div>
+                            <h3 class="dropzone-heading">Drag & Drop your dataset here</h3>
+                            <p class="dropzone-sub">
+                                Supports <span class="format-tag">.CSV</span>, <span class="format-tag">.XLSX</span>, <span class="format-tag">.XLS</span>, and <span class="format-tag">.JSON</span> files
+                            </p>
+
+                            <div class="dropzone-actions">
+                                <label for="dataset" class="btn btn-primary" id="browseBtn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="17 8 12 3 7 8"/>
+                                        <line x1="12" y1="3" x2="12" y2="15"/>
+                                    </svg>
+                                    <span>Browse Files</span>
+                                </label>
+                                <input type="file" id="dataset" accept=".csv,.xlsx,.xls,.json" class="file-input-hidden">
+
+                                <button class="btn btn-ghost" id="pasteDataBtn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                    </svg>
+                                    <span>Paste Raw CSV / Text</span>
+                                </button>
+                            </div>
+
+                            <div class="quick-samples-row">
+                                <span class="quick-samples-label">Quick 1-Click Samples:</span>
+                                <button class="sample-chip" id="chipSampleCustomers">👥 Dirty CRM (74% score)</button>
+                                <button class="sample-chip" id="chipSampleTxn">💳 Financial Txns (Outliers)</button>
+                                <button class="sample-chip" id="chipSampleBench">⚡ Clean Baseline (99%)</button>
+                            </div>
+                        </div>
+
+                        <!-- Scanning Radar Beam Animation Overlay -->
+                        <div class="scanning-overlay" id="scanningOverlay" style="display:none;">
+                            <div class="scanner-beam"></div>
+                            <div class="scanner-content">
+                                <div class="spinner-pulse"></div>
+                                <h4 class="scanner-title">Analyzing Dataset Integrity...</h4>
+                                <p class="scanner-status" id="scannerStatusText">Checking schema integrity & statistical distribution...</p>
+                                <div class="scanner-progress-bar">
+                                    <div class="scanner-progress-fill" id="scannerProgressFill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paste Modal -->
+                <div class="modal-backdrop" id="pasteModal" style="display:none;">
+                    <div class="modal-card">
+                        <div class="modal-header">
+                            <h3>Paste CSV or JSON Data</h3>
+                            <button class="modal-close-btn" id="closePasteModal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-muted">Paste comma-separated values (CSV with headers) or a valid JSON array below:</p>
+                            <textarea id="rawTextInput" placeholder="id,name,email,age,status&#10;1,Alex,alex@example.com,28,Active&#10;2,Taylor,,34,Pending&#10;3,Jordan,jordan@demo.org,-5,Active"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-ghost" id="cancelPasteBtn">Cancel</button>
+                            <button class="btn btn-primary" id="submitPasteBtn">Analyze Pasted Data</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RESULTS DASHBOARD (Displays upon file upload or sample load) -->
+                <div class="results-section" id="resultsSection" style="display:none;">
+                    <!-- File Metadata Bar -->
+                    <div class="file-summary-bar">
+                        <div class="file-meta-item">
+                            <span class="file-icon-badge">📄</span>
+                            <div>
+                                <div class="file-name-text" id="summaryFileName">dataset.csv</div>
+                                <div class="file-details-text" id="summaryFileDetails">Parsed in 18ms</div>
+                            </div>
+                        </div>
+                        <div class="file-meta-stats">
+                            <div class="meta-stat"><span class="meta-label">Total Rows:</span> <strong id="summaryRowsCount">0</strong></div>
+                            <div class="meta-stat"><span class="meta-label">Total Columns:</span> <strong id="summaryColsCount">0</strong></div>
+                            <div class="meta-stat"><span class="meta-label">Total Cells:</span> <strong id="summaryCellsCount">0</strong></div>
+                        </div>
+                        <div class="file-meta-actions">
+                            <button class="btn btn-sm btn-outline" id="exportAuditJsonBtn">Export JSON</button>
+                            <button class="btn btn-sm btn-primary" id="printReportBtn">Print Audit Report</button>
+                            <button class="btn btn-sm btn-secondary" id="resetBtn" title="Reset Dashboard">New Upload</button>
+                        </div>
+                    </div>
+
+                    <!-- EXECUTIVE SCORECARD OVERVIEW -->
+                    <div class="scorecard-grid">
+                        <!-- Radial Gauge Card -->
+                        <div class="card quality-score-card">
+                            <div class="card-header-compact">
+                                <span class="card-subtitle">VERITY HEALTH INDEX</span>
+                                <span class="info-tooltip" title="Composite weighted quality score based on Completeness (35%), Uniqueness (20%), Validity (25%), and Outliers (20%).">ⓘ</span>
+                            </div>
+                            <div class="gauge-wrapper">
+                                <div class="radial-gauge-container">
+                                    <svg class="radial-svg" viewBox="0 0 160 160">
+                                        <circle class="gauge-bg" cx="80" cy="80" r="68" />
+                                        <circle class="gauge-fill" id="gaugeCircle" cx="80" cy="80" r="68" stroke-dasharray="427" stroke-dashoffset="427" />
+                                    </svg>
+                                    <div class="gauge-center-content">
+                                        <span class="gauge-score-value" id="overallScoreValue">--</span>
+                                        <span class="gauge-score-max">/100</span>
+                                    </div>
+                                </div>
+                                <div class="gauge-rating-box">
+                                    <span class="grade-badge" id="gradeBadge">Evaluating</span>
+                                    <p class="grade-caption" id="gradeCaption">Run an audit to compute dataset health.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4 Key KPI Metric Cards -->
+                        <div class="kpi-cards-grid">
+                            <!-- Completeness -->
+                            <div class="kpi-card" id="cardCompleteness">
+                                <div class="kpi-top">
+                                    <div class="kpi-icon completeness-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                        </svg>
+                                    </div>
+                                    <span class="kpi-label">Completeness</span>
+                                </div>
+                                <div class="kpi-value-row">
+                                    <span class="kpi-value" id="completenessValue">--%</span>
+                                    <span class="kpi-tag" id="missingCellsTag">0 Missing</span>
+                                </div>
+                                <div class="kpi-progress">
+                                    <div class="kpi-progress-bar completeness-bar" id="completenessBar" style="width: 0%"></div>
+                                </div>
+                                <span class="kpi-hint">Non-null data cell density</span>
+                            </div>
+
+                            <!-- Uniqueness -->
+                            <div class="kpi-card" id="cardUniqueness">
+                                <div class="kpi-top">
+                                    <div class="kpi-icon uniqueness-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                            <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                            <line x1="6" y1="18" x2="6.01" y2="18"/>
+                                        </svg>
+                                    </div>
+                                    <span class="kpi-label">Uniqueness</span>
+                                </div>
+                                <div class="kpi-value-row">
+                                    <span class="kpi-value" id="uniquenessValue">--%</span>
+                                    <span class="kpi-tag" id="duplicateRowsTag">0 Duplicates</span>
+                                </div>
+                                <div class="kpi-progress">
+                                    <div class="kpi-progress-bar uniqueness-bar" id="uniquenessBar" style="width: 0%"></div>
+                                </div>
+                                <span class="kpi-hint">Row deduplication integrity</span>
+                            </div>
+
+                            <!-- Schema & Type Validity -->
+                            <div class="kpi-card" id="cardValidity">
+                                <div class="kpi-top">
+                                    <div class="kpi-icon validity-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="kpi-label">Type Validity</span>
+                                </div>
+                                <div class="kpi-value-row">
+                                    <span class="kpi-value" id="validityValue">--%</span>
+                                    <span class="kpi-tag" id="typeMismatchesTag">0 Invalids</span>
+                                </div>
+                                <div class="kpi-progress">
+                                    <div class="kpi-progress-bar validity-bar" id="validityBar" style="width: 0%"></div>
+                                </div>
+                                <span class="kpi-hint">Format & syntax compliance</span>
+                            </div>
+
+                            <!-- Outliers & Anomalies -->
+                            <div class="kpi-card" id="cardOutliers">
+                                <div class="kpi-top">
+                                    <div class="kpi-icon outliers-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                    </div>
+                                    <span class="kpi-label">Anomalies</span>
+                                </div>
+                                <div class="kpi-value-row">
+                                    <span class="kpi-value" id="outliersValue">0</span>
+                                    <span class="kpi-tag" id="outliersTag">IQR Outliers</span>
+                                </div>
+                                <div class="kpi-progress">
+                                    <div class="kpi-progress-bar outliers-bar" id="outliersBar" style="width: 0%"></div>
+                                </div>
+                                <span class="kpi-hint">Statistical extremes (1.5 × IQR)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WORKSPACE TABS -->
+                    <div class="workspace-tabs-container">
+                        <nav class="tabs-nav" role="tablist">
+                            <button class="tab-btn active" id="tabBtnColumns" role="tab" aria-selected="true" data-tab="tabColumns">
+                                <span class="tab-icon">📊</span>
+                                <span>Column Health & Schema</span>
+                                <span class="tab-badge" id="tabColsCountBadge">0</span>
+                            </button>
+                            <button class="tab-btn" id="tabBtnGrid" role="tab" aria-selected="false" data-tab="tabGrid">
+                                <span class="tab-icon">🔍</span>
+                                <span>Data Explorer & Grid</span>
+                                <span class="tab-badge" id="tabRowsCountBadge">0</span>
+                            </button>
+                            <button class="tab-btn" id="tabBtnStats" role="tab" aria-selected="false" data-tab="tabStats">
+                                <span class="tab-icon">📈</span>
+                                <span>Statistical Profiler</span>
+                            </button>
+                            <button class="tab-btn" id="tabBtnClean" role="tab" aria-selected="false" data-tab="tabClean">
+                                <span class="tab-icon">🛠️</span>
+                                <span>Smart Cleaning & Export</span>
+                                <span class="tab-badge-glow">Auto-Fix</span>
+                            </button>
+                            <button class="tab-btn" id="tabBtnReport" role="tab" aria-selected="false" data-tab="tabReport">
+                                <span class="tab-icon">📑</span>
+                                <span>Audit Certificate</span>
+                            </button>
+                        </nav>
+
+                        <!-- TAB PANELS -->
+                        <div class="tab-panels">
+
+                            <!-- TAB 1: COLUMN HEALTH MATRIX -->
+                            <div class="tab-panel active" id="tabColumns" role="tabpanel">
+                                <div class="visuals-row">
+                                    <div class="chart-card">
+                                        <div class="chart-header">
+                                            <h4>Column Completeness Distribution</h4>
+                                            <span class="text-muted">Fill rate per column (%)</span>
+                                        </div>
+                                        <div class="chart-body" id="completenessChartBody"></div>
+                                    </div>
+                                    <div class="chart-card chart-card-compact">
+                                        <div class="chart-header">
+                                            <h4>Issues Breakdown</h4>
+                                            <span class="text-muted">Detected flaw distribution</span>
+                                        </div>
+                                        <div class="chart-body" id="issuesBreakdownChartBody"></div>
+                                    </div>
+                                </div>
+
+                                <div class="table-container">
+                                    <table class="verity-table" id="columnsMatrixTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Column Name</th>
+                                                <th>Inferred Type</th>
+                                                <th>Completeness</th>
+                                                <th>Uniqueness</th>
+                                                <th>Missing Cells</th>
+                                                <th>Distinct Values</th>
+                                                <th>Issues Detected</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="columnsMatrixTableBody"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- TAB 2: DATA EXPLORER & GRID -->
+                            <div class="tab-panel" id="tabGrid" role="tabpanel">
+                                <div class="grid-toolbar">
+                                    <div class="search-box">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="11" cy="11" r="8"/>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                        </svg>
+                                        <input type="text" id="gridSearchInput" placeholder="Filter rows across all columns...">
+                                    </div>
+
+                                    <div class="filter-toggles">
+                                        <span class="filter-label">Filter:</span>
+                                        <button class="filter-chip active" id="filterAllRows">All Rows (<span id="allRowsCount">0</span>)</button>
+                                        <button class="filter-chip" id="filterErrorRows">⚠️ Rows with Issues (<span id="errorRowsCount">0</span>)</button>
+                                        <button class="filter-chip" id="filterCleanRows">✓ Clean Rows (<span id="cleanRowsCount">0</span>)</button>
+                                    </div>
+
+                                    <div class="page-size-selector">
+                                        <label for="pageSizeSelect">Show:</label>
+                                        <select id="pageSizeSelect">
+                                            <option value="10">10</option>
+                                            <option value="25" selected>25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="grid-table-container">
+                                    <table class="verity-table grid-table" id="dataGridTable">
+                                        <thead id="dataGridHead"></thead>
+                                        <tbody id="dataGridBody"></tbody>
+                                    </table>
+                                </div>
+
+                                <div class="pagination-footer">
+                                    <div class="pagination-info" id="paginationInfo">Showing 1 to 25 of 100 rows</div>
+                                    <div class="pagination-buttons">
+                                        <button class="page-btn" id="prevPageBtn" disabled>&laquo; Previous</button>
+                                        <div class="page-numbers" id="pageNumbersContainer"></div>
+                                        <button class="page-btn" id="nextPageBtn">Next &raquo;</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAB 3: STATISTICAL PROFILER -->
+                            <div class="tab-panel" id="tabStats" role="tabpanel">
+                                <div class="stats-selector-row">
+                                    <label for="statsColumnSelect" class="selector-label">Select Numeric Column to Profile:</label>
+                                    <select id="statsColumnSelect" class="custom-select"></select>
+                                </div>
+
+                                <div class="stats-dashboard" id="statsDashboard">
+                                    <div class="stats-metrics-grid" id="statsMetricsGrid"></div>
+                                    <div class="histogram-card">
+                                        <div class="chart-header">
+                                            <h4>Frequency Distribution Histogram</h4>
+                                            <span class="text-muted" id="histogramSubtitle">Value distribution across bins</span>
+                                        </div>
+                                        <div class="chart-body" id="histogramChartBody"></div>
+                                    </div>
+                                    <div class="top-frequencies-card">
+                                        <h4>Top Frequent Values</h4>
+                                        <div class="frequency-list" id="topFrequencyList"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAB 4: SMART CLEANING & REMEDIATION -->
+                            <div class="tab-panel" id="tabClean" role="tabpanel">
+                                <div class="cleaning-grid">
+                                    <div class="card clean-config-card">
+                                        <div class="card-header">
+                                            <div class="header-icon-title">
+                                                <span class="header-icon">🧹</span>
+                                                <div>
+                                                    <h3>Automated Remediation Rules</h3>
+                                                    <p class="text-muted">Configure cleaning transformations to repair anomalies</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clean-options-list">
+                                            <label class="toggle-option">
+                                                <input type="checkbox" id="cleanDedup" checked>
+                                                <div class="toggle-text">
+                                                    <strong>Deduplicate Identical Rows</strong>
+                                                    <span>Eliminates redundant records that share identical values across all fields.</span>
+                                                </div>
+                                            </label>
+
+                                            <label class="toggle-option">
+                                                <input type="checkbox" id="cleanTrim" checked>
+                                                <div class="toggle-text">
+                                                    <strong>Trim Extraneous Whitespace</strong>
+                                                    <span>Strips hidden leading, trailing, and double spacing from textual fields.</span>
+                                                </div>
+                                            </label>
+
+                                            <label class="toggle-option">
+                                                <input type="checkbox" id="cleanCasing" checked>
+                                                <div class="toggle-text">
+                                                    <strong>Standardize Casing</strong>
+                                                    <span>Capitalizes proper nouns (Name, City) and converts emails to lowercase.</span>
+                                                </div>
+                                            </label>
+
+                                            <div class="select-option-group">
+                                                <label for="cleanImputeNum"><strong>Impute Missing Numerical Values:</strong></label>
+                                                <select id="cleanImputeNum" class="custom-select">
+                                                    <option value="none">Do Not Impute (Keep Null)</option>
+                                                    <option value="mean" selected>Fill with Column Mean</option>
+                                                    <option value="median">Fill with Column Median</option>
+                                                    <option value="zero">Fill with Zero (0)</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="select-option-group">
+                                                <label for="cleanImputeText"><strong>Impute Missing Text Values:</strong></label>
+                                                <select id="cleanImputeText" class="custom-select">
+                                                    <option value="none">Do Not Impute (Keep Empty)</option>
+                                                    <option value="NA" selected>Replace with "N/A"</option>
+                                                </select>
+                                            </div>
+
+                                            <label class="toggle-option">
+                                                <input type="checkbox" id="cleanDropEmpty" checked>
+                                                <div class="toggle-text">
+                                                    <strong>Drop 100% Empty Rows</strong>
+                                                    <span>Prunes records where every cell is blank or null.</span>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <div class="clean-actions">
+                                            <button class="btn btn-primary btn-lg" id="runCleanBtn">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="23 4 23 10 17 10"/>
+                                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                                                </svg>
+                                                <span>Execute Smart Cleaning</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Remediation Impact Card -->
+                                    <div class="card clean-results-card">
+                                        <div class="card-header">
+                                            <div class="header-icon-title">
+                                                <span class="header-icon">📈</span>
+                                                <div>
+                                                    <h3>Remediation Impact</h3>
+                                                    <p class="text-muted">Before and after data quality comparison</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="impact-comparison">
+                                            <div class="impact-box before-box">
+                                                <span class="impact-label">Original Score</span>
+                                                <span class="impact-score" id="beforeScoreText">--</span>
+                                                <span class="impact-rows" id="beforeRowsText">0 Rows</span>
+                                            </div>
+                                            <div class="impact-arrow">➜</div>
+                                            <div class="impact-box after-box">
+                                                <span class="impact-label">Cleaned Score</span>
+                                                <span class="impact-score score-boost" id="afterScoreText">--</span>
+                                                <span class="impact-rows" id="afterRowsText">0 Rows</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="changes-log-box" id="changesLogBox">
+                                            <h4>Modifications Applied:</h4>
+                                            <ul class="changes-list" id="changesList">
+                                                <li>Click "Execute Smart Cleaning" to apply transformation rules.</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="export-buttons-group">
+                                            <button class="btn btn-success btn-lg" id="downloadCleanCsvBtn" disabled>
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                                    <polyline points="7 10 12 15 17 10"/>
+                                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                                </svg>
+                                                <span>Download Cleaned CSV</span>
+                                            </button>
+                                            <button class="btn btn-outline" id="downloadCleanXlsxBtn" disabled>
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                    <polyline points="14 2 14 8 20 8"/>
+                                                </svg>
+                                                <span>Download Cleaned Excel</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAB 5: AUDIT CERTIFICATE -->
+                            <div class="tab-panel" id="tabReport" role="tabpanel">
+                                <div class="report-wrapper" id="printableReport">
+                                    <div class="report-header">
+                                        <div class="report-title-block">
+                                            <h2>DATAVERITY QUALITY AUDIT CERTIFICATE</h2>
+                                            <p class="report-id">Document ID: <span id="reportDocId">DV-2026-AUDIT</span></p>
+                                        </div>
+                                        <div class="report-stamp" id="reportStamp">
+                                            <span class="stamp-grade" id="reportGradeStamp">A+</span>
+                                            <span class="stamp-sub">VERITY VERIFIED</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="report-meta-grid">
+                                        <div class="report-meta-col">
+                                            <div class="meta-row"><span>Dataset Name:</span> <strong id="reportDatasetName">customers.csv</strong></div>
+                                            <div class="meta-row"><span>Audit Date:</span> <strong id="reportDate">2026-10-13</strong></div>
+                                            <div class="meta-row"><span>Dimensions:</span> <strong id="reportDimensions">100 Rows × 8 Columns</strong></div>
+                                        </div>
+                                        <div class="report-meta-col">
+                                            <div class="meta-row"><span>Overall Verity Score:</span> <strong id="reportOverallScore">89/100</strong></div>
+                                            <div class="meta-row"><span>Completeness Rate:</span> <strong id="reportCompleteness">95.4%</strong></div>
+                                            <div class="meta-row"><span>Uniqueness Integrity:</span> <strong id="reportUniqueness">98.0%</strong></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="report-standards-section">
+                                        <h3>ISO/IEC 25012 Data Quality Dimension Compliance</h3>
+                                        <div class="standards-table-wrapper">
+                                            <table class="report-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Quality Dimension</th>
+                                                        <th>Criteria Evaluated</th>
+                                                        <th>Measured Status</th>
+                                                        <th>Compliance</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="reportStandardsBody"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="report-findings-section">
+                                        <h3>Actionable Pipeline Remediation Recommendations</h3>
+                                        <ul class="findings-list" id="reportFindingsList"></ul>
+                                    </div>
+
+                                    <div class="report-footer">
+                                        <div class="signoff">
+                                            <p>Automated Audit Performed by DataVerity Profiling Engine</p>
+                                            <small>Standard: ISO/IEC 25012 Data Quality Standards Framework</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="report-actions-row">
+                                    <button class="btn btn-primary" id="btnReportPrint">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 6 2 18 2 18 9"/>
+                                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                                            <rect x="6" y="14" width="12" height="8"/>
+                                        </svg>
+                                        <span>Print / Save as PDF</span>
+                                    </button>
+                                    <button class="btn btn-outline" id="btnReportDownloadJson">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                            <polyline points="7 10 12 15 17 10"/>
+                                            <line x1="12" y1="15" x2="12" y2="3"/>
+                                        </svg>
+                                        <span>Export Audit JSON</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 3. PRODUCT FEATURES BENTO GRID -->
+        <!-- ================================================================= -->
+        <section class="features-section" id="features">
+            <div class="section-header-centered">
+                <span class="badge-pill">Enterprise Capabilities</span>
+                <h2 class="section-title">Engineered for Robust Data Pipelines</h2>
+                <p class="section-subtitle">
+                    Everything data engineers and analytics teams need to inspect, validate, and clean datasets before deployment.
+                </p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Bento Card 1 -->
+                <div class="bento-card bento-wide">
+                    <div class="bento-icon-box gradient-indigo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="4"/>
+                            <path d="M7 10h10M7 14h6"/>
+                        </svg>
+                    </div>
+                    <h3>Automated Type & Schema Inference</h3>
+                    <p>Detects numeric, email, ISO date, boolean, and categorical types across unstructured columns with high confidence algorithms.</p>
+                    <div class="bento-visual">
+                        <span class="pill-badge type-email">email</span>
+                        <span class="pill-badge type-number">numeric</span>
+                        <span class="pill-badge type-date">date-iso</span>
+                        <span class="pill-badge type-boolean">boolean</span>
+                    </div>
+                </div>
+
+                <!-- Bento Card 2 -->
+                <div class="bento-card">
+                    <div class="bento-icon-box gradient-cyan">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>IQR Statistical Outlier Detection</h3>
+                    <p>Identifies distribution skew, extreme quartiles, and numerical anomalies using 1.5 &times; Interquartile Range evaluation.</p>
+                </div>
+
+                <!-- Bento Card 3 -->
+                <div class="bento-card">
+                    <div class="bento-icon-box gradient-emerald">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>1-Click Smart Remediation</h3>
+                    <p>Deduplicate identical rows, impute missing numbers using mean/median, trim whitespace, and standardize casing in seconds.</p>
+                </div>
+
+                <!-- Bento Card 4 -->
+                <div class="bento-card bento-wide">
+                    <div class="bento-icon-box gradient-purple">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Interactive Tabular Data Grid</h3>
+                    <p>Filter rows with issues, execute real-time multi-column search, sort headers, and view flagged cells with color-coded alerts.</p>
+                </div>
+
+                <!-- Bento Card 5 -->
+                <div class="bento-card">
+                    <div class="bento-icon-box gradient-rose">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                    </div>
+                    <h3>ISO/IEC 25012 Certificates</h3>
+                    <p>Generate print-ready executive compliance certificates with recommendations for upstream data engineering pipelines.</p>
+                </div>
+
+                <!-- Bento Card 6 -->
+                <div class="bento-card">
+                    <div class="bento-icon-box gradient-amber">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>Local & Air-Gapped Privacy</h3>
+                    <p>100% of calculations execute directly in your browser or local private server. No external data telemetry or retention.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 4. HOW IT WORKS WORKFLOW -->
+        <!-- ================================================================= -->
+        <section class="how-section" id="how-it-works">
+            <div class="section-header-centered">
+                <span class="badge-pill">Step-by-Step Architecture</span>
+                <h2 class="section-title">How DataVerity Works</h2>
+                <p class="section-subtitle">
+                    Transform raw, corrupted datasets into reliable, production-ready assets in 3 simple steps.
+                </p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Ingest & Parse</h3>
+                        <p>Drop your CSV, Excel, or JSON files. Our engine reads schemas and identifies structure in milliseconds.</p>
+                    </div>
+                </div>
+
+                <div class="step-arrow">➜</div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Audit & Score</h3>
+                        <p>We compute composite ISO/IEC 25012 quality ratings across Completeness, Uniqueness, Validity, and Outliers.</p>
+                    </div>
+                </div>
+
+                <div class="step-arrow">➜</div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Remediate & Export</h3>
+                        <p>Execute automated deduplication and imputation rules. Download cleaned CSV/Excel files and formal audit certificates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 5. INTERACTIVE ROI & DATA QUALITY IMPACT CALCULATOR -->
+        <!-- ================================================================= -->
+        <section class="calculator-section" id="calculator">
+            <div class="section-header-centered">
+                <span class="badge-pill">Business Impact</span>
+                <h2 class="section-title">Dirty Data Cost & Time Savings Calculator</h2>
+                <p class="section-subtitle">
+                    See how much engineering time and compute cost automated data verification saves your organization.
+                </p>
+            </div>
+
+            <div class="calculator-card">
+                <div class="calculator-controls">
+                    <div class="calc-control-group">
+                        <div class="calc-label-row">
+                            <label for="calcRowsRange">Monthly Dataset Scale:</label>
+                            <span class="calc-dynamic-val" id="calcRowsVal">100,000 Rows</span>
+                        </div>
+                        <input type="range" id="calcRowsRange" min="10000" max="1000000" step="10000" value="100000" class="calc-range">
+                    </div>
+
+                    <div class="calc-control-group">
+                        <div class="calc-label-row">
+                            <label for="calcErrorRateRange">Estimated Data Flaw Rate:</label>
+                            <span class="calc-dynamic-val" id="calcErrorRateVal">6%</span>
+                        </div>
+                        <input type="range" id="calcErrorRateRange" min="1" max="25" step="1" value="6" class="calc-range">
+                    </div>
+                </div>
+
+                <div class="calculator-results-grid">
+                    <div class="calc-result-box">
+                        <span class="calc-result-label">Flawed Records Prevented</span>
+                        <strong class="calc-result-num" id="resFlawsCount">6,000</strong>
+                        <span class="calc-result-sub">bad rows caught before pipelines</span>
+                    </div>
+
+                    <div class="calc-result-box highlight-box">
+                        <span class="calc-result-label">Engineering Hours Saved</span>
+                        <strong class="calc-result-num text-gradient" id="resHoursSaved">42 hrs</strong>
+                        <span class="calc-result-sub">manual triage avoided / month</span>
+                    </div>
+
+                    <div class="calc-result-box">
+                        <span class="calc-result-label">Estimated Value Preserved</span>
+                        <strong class="calc-result-num" id="resCostSaved">$3,150</strong>
+                        <span class="calc-result-sub">based on standard $75/hr engineer cost</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 6. DATA QUALITY STANDARDS & ACCORDION FAQ -->
+        <!-- ================================================================= -->
+        <section class="standards-section" id="standards">
+            <div class="section-header-centered">
+                <span class="badge-pill">Framework Standard</span>
+                <h2 class="section-title">ISO/IEC 25012 Benchmark Dimensions</h2>
+                <p class="section-subtitle">DataVerity measures data quality against international software quality criteria.</p>
+            </div>
+
+            <div class="standards-grid">
+                <div class="standard-pill-card">
+                    <h4>1. Completeness</h4>
+                    <p>Degree to which subject data has values for all expected attributes without silent nulls.</p>
+                </div>
+                <div class="standard-pill-card">
+                    <h4>2. Uniqueness</h4>
+                    <p>Ensures records lack redundant duplicates that cause overcounting in business metrics.</p>
+                </div>
+                <div class="standard-pill-card">
+                    <h4>3. Syntactic Validity</h4>
+                    <p>Conformity of values to schemas, domain rules, ISO dates, and valid regex expressions.</p>
+                </div>
+                <div class="standard-pill-card">
+                    <h4>4. Consistency</h4>
+                    <p>Absence of statistical divergence and anomalous outlier spikes beyond 1.5 &times; IQR.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section" id="faq">
+            <div class="section-header-centered">
+                <span class="badge-pill">Frequently Asked Questions</span>
+                <h2 class="section-title">Common Questions</h2>
+            </div>
+
+            <div class="faq-accordion-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What file formats can DataVerity analyze?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>DataVerity natively supports CSV (.csv), Excel (.xlsx, .xls), and JSON (.json) files up to 25MB, as well as raw copy-pasted tabular text.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is my data uploaded to any third-party cloud servers?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. DataVerity processes all data either completely within your browser client or on your local private Node.js instance. Your datasets never leave your private environment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How is the composite Data Quality Score calculated?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The score is computed using a weighted ISO/IEC 25012 model: Completeness (35%), Syntactic Validity (25%), Uniqueness (20%), and Statistical Consistency without Outliers (20%).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I export cleaned data back to Excel and CSV?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. The Smart Cleaning tab allows you to configure deduplication, imputation, and casing rules, preview before/after score improvements, and download the cleaned dataset directly as CSV or Excel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-banner-section">
+            <div class="cta-banner-card">
+                <h2>Eliminate Dirty Data From Your Organization Today</h2>
+                <p>Start profiling and repairing datasets in seconds with zero configuration required.</p>
+                <a href="#analyzer" class="btn btn-primary btn-lg">Launch Studio Analyzer Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- WEBSITE FOOTER -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-columns-grid">
+                <div class="footer-col-brand">
+                    <div class="brand-group">
+                        <svg class="brand-icon" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="url(#footerBrandGrad)" />
+                            <path d="M9 16L14 21L23 11" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="23" cy="21" r="3" fill="#38bdf8"/>
+                            <defs>
+                                <linearGradient id="footerBrandGrad" x1="0" y1="0" x2="32" y2="32">
+                                    <stop stop-color="#6366f1"/>
+                                    <stop offset="1" stop-color="#06b6d4"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="brand-name">DataVerity</span>
+                    </div>
+                    <p class="footer-desc">Enterprise data quality verification, schema profiling, anomaly detection, and automated remediation platform.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="#analyzer">Live Studio</a>
+                    <a href="#features">Capabilities</a>
+                    <a href="#how-it-works">Architecture</a>
+                    <a href="#standards">ISO 25012</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <a href="#calculator">ROI Calculator</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="/api/status" target="_blank">API Health Status</a>
+                    <a href="#hero">Back to Top</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row">
+                <p>&copy; 2026 DataVerity Platform &bull; Built with HTML5, CSS3, JavaScript & Express</p>
+                <div class="footer-badge-pill">Private &bull; Air-Gapped Capable &bull; Fast</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/vendor/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
